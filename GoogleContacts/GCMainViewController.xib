@@ -6,8 +6,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GCMainViewController">
             <connections>
-                <outlet property="password" destination="XIx-xr-xOX" id="wX5-8R-UDT"/>
-                <outlet property="username" destination="oeB-sW-Aih" id="buY-Ta-g7q"/>
+                <outlet property="login" destination="2jG-7k-nmg" id="2bg-HY-mI5"/>
+                <outlet property="password" destination="XIx-xr-xOX" id="ukU-DE-re4"/>
+                <outlet property="username" destination="oeB-sW-Aih" id="VOT-XQ-fqr"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

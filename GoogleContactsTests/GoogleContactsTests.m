@@ -7,9 +7,12 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "GCMainViewController.h"
 
 @interface GoogleContactsTests : XCTestCase
-
+{
+    GCMainViewController *_mainViewController;
+}
 @end
 
 @implementation GoogleContactsTests
@@ -18,6 +21,7 @@
 {
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
+    _mainViewController = [[GCMainViewController alloc] initWithNibName:@"GCMainViewController" bundle:nil];
 }
 
 - (void)tearDown
@@ -26,9 +30,25 @@
     [super tearDown];
 }
 
-- (void)testExample
-{
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+-(void)testGCMainViewControllerOuletsAndActions {
+    
+    //Test if GCMainViewController exists
+    XCTAssertNotNil([_mainViewController view], @"ViewController should contain a view");
+        
+   // XCTAssertNotNil(control, @"Username should be connected");
+    XCTAssertNotNil([_mainViewController username], @"Username should be connected");
+
+    //Test if password outlet is connected
+    XCTAssertNotNil([_mainViewController password], @"Password should be connected");
+    
+    //Test if login has action hooked up
+    NSArray *actions = [_mainViewController.login actionsForTarget:_mainViewController
+                                                  forControlEvent:UIControlEventTouchUpInside];
+
+    XCTAssertTrue([actions containsObject:@"login:"], @"Login action should be connected");
+    
 }
+
+
 
 @end

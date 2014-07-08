@@ -37,6 +37,11 @@
                BlueprintName = "GoogleContactsTests"
                ReferencedContainer = "container:GoogleContacts.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "GoogleContactsTests/testExample">
+               </Test>
+            </SkippedTests>
          </TestableReference>
       </Testables>
       <MacroExpansion>

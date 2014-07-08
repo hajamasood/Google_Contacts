@@ -109,7 +109,7 @@
     if (error) {
         NSLog(@"Contacts Fetch error");
         
-        if (self.delegate) {
+        if (self.delegate && [self.delegate respondsToSelector:@selector(fetchContactsFailed)]) {
             [self.delegate fetchContactsFailed];
         }
         
@@ -146,7 +146,7 @@
             }
             
             if (!ContactName || !(ContactEmail || ContactPhone) ) {
-                NSLog(@"Empty Contact Fields. Not Adding.");
+               // Empty Contact Fields. Not Adding
             }
             else
             {
@@ -159,11 +159,11 @@
         }
         
         NSSortDescriptor *descriptor =
-        [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)];
+        [[NSSortDescriptor alloc] initWithKey:CONTACT_KEY_NAME ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)];
         [_googleContacts sortUsingDescriptors:[NSArray arrayWithObjects:descriptor, nil]];
         
         
-        if (self.delegate) {
+        if (self.delegate && [self.delegate respondsToSelector:@selector(fetchContactsSucceed)]) {
             [self.delegate fetchContactsSucceed];
         }
         

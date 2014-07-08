@@ -8,6 +8,7 @@
 
 #import "GCContactsTableViewController.h"
 #import "GCContactsManager.h"
+#import "GCContactDetailViewController.h"
 
 @interface GCContactsTableViewController ()
 {
@@ -109,7 +110,7 @@
 }
 */
 
-/*
+
 #pragma mark - Table view delegate
 
 // In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
@@ -117,13 +118,13 @@
 {
     // Navigation logic may go here, for example:
     // Create the next view controller.
-    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:<#@"Nib name"#> bundle:nil];
-    
+    GCContactDetailViewController *detailViewController = [[GCContactDetailViewController alloc] initWithNibName:@"GCContactDetailViewController" bundle:nil];
+    detailViewController.contact = [_googleContacts objectAtIndex:indexPath.row];
     // Pass the selected object to the new view controller.
     
     // Push the view controller.
     [self.navigationController pushViewController:detailViewController animated:YES];
 }
-*/
+
 
 @end
