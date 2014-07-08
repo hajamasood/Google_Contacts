@@ -7,6 +7,7 @@
 //
 
 #import "GCAppDelegate.h"
+#import "GCMainViewController.h"
 
 @implementation GCAppDelegate
 
@@ -15,6 +16,11 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    
+    GCMainViewController *mainViewController = [[GCMainViewController alloc] init];
+    self.nvc = [[UINavigationController alloc] initWithRootViewController:mainViewController];
+    self.window.rootViewController = self.nvc;
+    
     [self.window makeKeyAndVisible];
     return YES;
 }
