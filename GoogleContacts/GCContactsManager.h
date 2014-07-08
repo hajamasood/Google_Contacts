@@ -14,6 +14,7 @@
 #define CONTACT_KEY_EMAIL  @"email"
 #define CONTACT_KEY_PHONE_NUMBER  @"phone"
 #define CONTACT_KEY_ADDRESS  @"address"
+#define CONTACT_KEY_PHOTO_URL @"photoURL"
 
 @protocol GCContactsManagerDelegate <NSObject>
 @optional

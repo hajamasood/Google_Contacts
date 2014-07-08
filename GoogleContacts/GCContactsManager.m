@@ -145,13 +145,16 @@
                 address = [postalAddress formattedAddress];
             }
             
+            // Photo
+            NSString *photoLink = [[contact photoLink] href];
+
             if (!ContactName || !(ContactEmail || ContactPhone) ) {
                // Empty Contact Fields. Not Adding
             }
             else
             {
-                NSArray *keys = [[NSArray alloc] initWithObjects:CONTACT_KEY_NAME, CONTACT_KEY_EMAIL, CONTACT_KEY_PHONE_NUMBER, CONTACT_KEY_ADDRESS, nil];
-                NSArray *objs = [[NSArray alloc] initWithObjects:ContactName, ContactEmail, ContactPhone, address, nil];
+                NSArray *keys = [[NSArray alloc] initWithObjects:CONTACT_KEY_NAME, CONTACT_KEY_EMAIL, CONTACT_KEY_PHONE_NUMBER, CONTACT_KEY_ADDRESS, CONTACT_KEY_PHOTO_URL, nil];
+                NSArray *objs = [[NSArray alloc] initWithObjects:ContactName, ContactEmail, ContactPhone, address, photoLink, nil];
                 NSDictionary *dict = [[NSDictionary alloc] initWithObjects:objs forKeys:keys];
                 
                 [_googleContacts addObject:dict];

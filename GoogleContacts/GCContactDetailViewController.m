@@ -34,6 +34,28 @@
     self.email.text = self.contact[CONTACT_KEY_EMAIL];
     self.phoneno.text = self.contact[CONTACT_KEY_PHONE_NUMBER];
     self.address.text = self.contact[CONTACT_KEY_ADDRESS];
+    
+    [self loadContactPhoto];
+    
+    [self.view setUserInteractionEnabled:NO];
+}
+
+- (void)loadContactPhoto
+{
+    NSURL *photoURL = [NSURL URLWithString:self.contact[CONTACT_KEY_PHOTO_URL]];
+
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        
+        NSData *photoData = [NSData dataWithContentsOfURL:photoURL];
+
+        if (photoData.length > 0) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.photoImageView.image = [UIImage imageWithData:photoData];
+            });
+        }
+        
+    });
+
 }
 
 - (void)didReceiveMemoryWarning
