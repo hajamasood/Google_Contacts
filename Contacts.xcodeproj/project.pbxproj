@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A5009BE919780AE40079788E /* GCUser.m in Sources */ = {isa = PBXBuildFile; fileRef = A5009BE819780AE40079788E /* GCUser.m */; };
+		A5009BEB19780FB60079788E /* contact_placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = A5009BEA19780FB60079788E /* contact_placeholder.png */; };
 		A580AF3C196BA4F900D9DA71 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A580AF3B196BA4F900D9DA71 /* Foundation.framework */; };
 		A580AF3E196BA4F900D9DA71 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A580AF3D196BA4F900D9DA71 /* CoreGraphics.framework */; };
 		A580AF40196BA4F900D9DA71 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A580AF3F196BA4F900D9DA71 /* UIKit.framework */; };
@@ -18,7 +20,7 @@
 		A580AF56196BA4F900D9DA71 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A580AF3B196BA4F900D9DA71 /* Foundation.framework */; };
 		A580AF57196BA4F900D9DA71 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A580AF3F196BA4F900D9DA71 /* UIKit.framework */; };
 		A580AF5F196BA4F900D9DA71 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A580AF5D196BA4F900D9DA71 /* InfoPlist.strings */; };
-		A580AF61196BA4F900D9DA71 /* GoogleContactsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A580AF60196BA4F900D9DA71 /* GoogleContactsTests.m */; };
+		A580AF61196BA4F900D9DA71 /* ContactsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A580AF60196BA4F900D9DA71 /* ContactsTests.m */; };
 		A580B0A6196BA54800D9DA71 /* libGDataTouchStaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A580B0A5196BA54800D9DA71 /* libGDataTouchStaticLib.a */; };
 		A580B0A7196BA54800D9DA71 /* libGDataTouchStaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A580B0A5196BA54800D9DA71 /* libGDataTouchStaticLib.a */; };
 		A580B0AB196BA58B00D9DA71 /* GCMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A580B0A9196BA58B00D9DA71 /* GCMainViewController.m */; };
@@ -50,6 +52,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A5009BE719780AE40079788E /* GCUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCUser.h; sourceTree = "<group>"; };
+		A5009BE819780AE40079788E /* GCUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCUser.m; sourceTree = "<group>"; };
+		A5009BEA19780FB60079788E /* contact_placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contact_placeholder.png; sourceTree = "<group>"; };
+		A5009C0A197825D30079788E /* GoogleContactsTests copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "GoogleContactsTests copy-Info.plist"; path = "/Users/masood/Mitel-Projects/Exercises/OLDgooglecontacts/Google_Contacts/GoogleContactsTests copy-Info.plist"; sourceTree = "<absolute>"; };
 		A580AF38196BA4F900D9DA71 /* GoogleContacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoogleContacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A580AF3B196BA4F900D9DA71 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A580AF3D196BA4F900D9DA71 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -61,11 +67,11 @@
 		A580AF4A196BA4F900D9DA71 /* GCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCAppDelegate.h; sourceTree = "<group>"; };
 		A580AF4B196BA4F900D9DA71 /* GCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCAppDelegate.m; sourceTree = "<group>"; };
 		A580AF4D196BA4F900D9DA71 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		A580AF53196BA4F900D9DA71 /* GoogleContactsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoogleContactsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A580AF53196BA4F900D9DA71 /* ContactsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ContactsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A580AF54196BA4F900D9DA71 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		A580AF5C196BA4F900D9DA71 /* GoogleContactsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleContactsTests-Info.plist"; sourceTree = "<group>"; };
 		A580AF5E196BA4F900D9DA71 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		A580AF60196BA4F900D9DA71 /* GoogleContactsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GoogleContactsTests.m; sourceTree = "<group>"; };
+		A580AF60196BA4F900D9DA71 /* ContactsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContactsTests.m; sourceTree = "<group>"; };
 		A580AF6B196BA54700D9DA71 /* GData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GData.h; sourceTree = "<group>"; };
 		A580AF6C196BA54700D9DA71 /* GDataACL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataACL.h; sourceTree = "<group>"; };
 		A580AF6D196BA54700D9DA71 /* GDataACLKeyedRole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataACLKeyedRole.h; sourceTree = "<group>"; };
@@ -428,11 +434,12 @@
 		A580AF2F196BA4F900D9DA71 = {
 			isa = PBXGroup;
 			children = (
-				A580AF41196BA4F900D9DA71 /* GoogleContacts */,
-				A580AF5A196BA4F900D9DA71 /* GoogleContactsTests */,
+				A580AF41196BA4F900D9DA71 /* Contacts */,
+				A580AF5A196BA4F900D9DA71 /* ContactsTests */,
 				A580B0C7196C3DA200D9DA71 /* Libraries */,
 				A580AF3A196BA4F900D9DA71 /* Frameworks */,
 				A580AF39196BA4F900D9DA71 /* Products */,
+				A5009C0A197825D30079788E /* GoogleContactsTests copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -440,7 +447,7 @@
 			isa = PBXGroup;
 			children = (
 				A580AF38196BA4F900D9DA71 /* GoogleContacts.app */,
-				A580AF53196BA4F900D9DA71 /* GoogleContactsTests.xctest */,
+				A580AF53196BA4F900D9DA71 /* ContactsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -459,17 +466,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		A580AF41196BA4F900D9DA71 /* GoogleContacts */ = {
+		A580AF41196BA4F900D9DA71 /* Contacts */ = {
 			isa = PBXGroup;
 			children = (
 				A580AF4A196BA4F900D9DA71 /* GCAppDelegate.h */,
 				A580AF4B196BA4F900D9DA71 /* GCAppDelegate.m */,
 				A580B0B6196BA60D00D9DA71 /* GCContactsManager.h */,
 				A580B0B7196BA60D00D9DA71 /* GCContactsManager.m */,
+				A5009BE719780AE40079788E /* GCUser.h */,
+				A5009BE819780AE40079788E /* GCUser.m */,
 				A580AF4D196BA4F900D9DA71 /* Images.xcassets */,
+				A5009BEA19780FB60079788E /* contact_placeholder.png */,
 				A580B0C5196C3C5D00D9DA71 /* ViewControllers */,
 				A580AF42196BA4F900D9DA71 /* Supporting Files */,
 			);
+			name = Contacts;
 			path = GoogleContacts;
 			sourceTree = "<group>";
 		};
@@ -484,12 +495,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		A580AF5A196BA4F900D9DA71 /* GoogleContactsTests */ = {
+		A580AF5A196BA4F900D9DA71 /* ContactsTests */ = {
 			isa = PBXGroup;
 			children = (
-				A580AF60196BA4F900D9DA71 /* GoogleContactsTests.m */,
+				A580AF60196BA4F900D9DA71 /* ContactsTests.m */,
 				A580AF5B196BA4F900D9DA71 /* Supporting Files */,
 			);
+			name = ContactsTests;
 			path = GoogleContactsTests;
 			sourceTree = "<group>";
 		};
@@ -851,9 +863,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A580AF37196BA4F900D9DA71 /* GoogleContacts */ = {
+		A580AF37196BA4F900D9DA71 /* Contacts */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A580AF64196BA4F900D9DA71 /* Build configuration list for PBXNativeTarget "GoogleContacts" */;
+			buildConfigurationList = A580AF64196BA4F900D9DA71 /* Build configuration list for PBXNativeTarget "Contacts" */;
 			buildPhases = (
 				A580AF34196BA4F900D9DA71 /* Sources */,
 				A580AF35196BA4F900D9DA71 /* Frameworks */,
@@ -863,14 +875,14 @@
 			);
 			dependencies = (
 			);
-			name = GoogleContacts;
+			name = Contacts;
 			productName = GoogleContacts;
 			productReference = A580AF38196BA4F900D9DA71 /* GoogleContacts.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A580AF52196BA4F900D9DA71 /* GoogleContactsTests */ = {
+		A580AF52196BA4F900D9DA71 /* ContactsTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A580AF67196BA4F900D9DA71 /* Build configuration list for PBXNativeTarget "GoogleContactsTests" */;
+			buildConfigurationList = A580AF67196BA4F900D9DA71 /* Build configuration list for PBXNativeTarget "ContactsTests" */;
 			buildPhases = (
 				A580AF4F196BA4F900D9DA71 /* Sources */,
 				A580AF50196BA4F900D9DA71 /* Frameworks */,
@@ -881,9 +893,9 @@
 			dependencies = (
 				A580AF59196BA4F900D9DA71 /* PBXTargetDependency */,
 			);
-			name = GoogleContactsTests;
+			name = ContactsTests;
 			productName = GoogleContactsTests;
-			productReference = A580AF53196BA4F900D9DA71 /* GoogleContactsTests.xctest */;
+			productReference = A580AF53196BA4F900D9DA71 /* ContactsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -901,7 +913,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A580AF33196BA4F900D9DA71 /* Build configuration list for PBXProject "GoogleContacts" */;
+			buildConfigurationList = A580AF33196BA4F900D9DA71 /* Build configuration list for PBXProject "Contacts" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -913,8 +925,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A580AF37196BA4F900D9DA71 /* GoogleContacts */,
-				A580AF52196BA4F900D9DA71 /* GoogleContactsTests */,
+				A580AF37196BA4F900D9DA71 /* Contacts */,
+				A580AF52196BA4F900D9DA71 /* ContactsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -927,6 +939,7 @@
 				A580AF46196BA4F900D9DA71 /* InfoPlist.strings in Resources */,
 				A580B0AD196BA58B00D9DA71 /* GCMainViewController.xib in Resources */,
 				A580B0B4196BA5DF00D9DA71 /* GCContactsTableViewController.xib in Resources */,
+				A5009BEB19780FB60079788E /* contact_placeholder.png in Resources */,
 				A580B0CD196C432800D9DA71 /* GCContactDetailViewController.xib in Resources */,
 				A580AF4E196BA4F900D9DA71 /* Images.xcassets in Resources */,
 			);
@@ -953,6 +966,7 @@
 				A580B0AB196BA58B00D9DA71 /* GCMainViewController.m in Sources */,
 				A580B0B8196BA60D00D9DA71 /* GCContactsManager.m in Sources */,
 				A580AF4C196BA4F900D9DA71 /* GCAppDelegate.m in Sources */,
+				A5009BE919780AE40079788E /* GCUser.m in Sources */,
 				A580B0B2196BA5DF00D9DA71 /* GCContactsTableViewController.m in Sources */,
 				A580B0CB196C432800D9DA71 /* GCContactDetailViewController.m in Sources */,
 				A580AF48196BA4F900D9DA71 /* main.m in Sources */,
@@ -963,7 +977,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A580AF61196BA4F900D9DA71 /* GoogleContactsTests.m in Sources */,
+				A580AF61196BA4F900D9DA71 /* ContactsTests.m in Sources */,
 				A580B0AC196BA58B00D9DA71 /* GCMainViewController.m in Sources */,
 				A580B0B9196BA60D00D9DA71 /* GCContactsManager.m in Sources */,
 				A580B0CC196C432800D9DA71 /* GCContactDetailViewController.m in Sources */,
@@ -976,7 +990,7 @@
 /* Begin PBXTargetDependency section */
 		A580AF59196BA4F900D9DA71 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A580AF37196BA4F900D9DA71 /* GoogleContacts */;
+			target = A580AF37196BA4F900D9DA71 /* Contacts */;
 			targetProxy = A580AF58196BA4F900D9DA71 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1126,7 +1140,7 @@
 		A580AF68196BA4F900D9DA71 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/GoogleContacts.app/GoogleContacts";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Contacts.app/Contacts";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -1164,7 +1178,7 @@
 		A580AF69196BA4F900D9DA71 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/GoogleContacts.app/GoogleContacts";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Contacts.app/Contacts";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -1198,7 +1212,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A580AF33196BA4F900D9DA71 /* Build configuration list for PBXProject "GoogleContacts" */ = {
+		A580AF33196BA4F900D9DA71 /* Build configuration list for PBXProject "Contacts" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A580AF62196BA4F900D9DA71 /* Debug */,
@@ -1207,21 +1221,23 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A580AF64196BA4F900D9DA71 /* Build configuration list for PBXNativeTarget "GoogleContacts" */ = {
+		A580AF64196BA4F900D9DA71 /* Build configuration list for PBXNativeTarget "Contacts" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A580AF65196BA4F900D9DA71 /* Debug */,
 				A580AF66196BA4F900D9DA71 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		A580AF67196BA4F900D9DA71 /* Build configuration list for PBXNativeTarget "GoogleContactsTests" */ = {
+		A580AF67196BA4F900D9DA71 /* Build configuration list for PBXNativeTarget "ContactsTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A580AF68196BA4F900D9DA71 /* Debug */,
 				A580AF69196BA4F900D9DA71 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

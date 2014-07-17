@@ -9,13 +9,13 @@
 #import <XCTest/XCTest.h>
 #import "GCMainViewController.h"
 
-@interface GoogleContactsTests : XCTestCase
+@interface ContactsTests : XCTestCase
 {
     GCMainViewController *_mainViewController;
 }
 @end
 
-@implementation GoogleContactsTests
+@implementation ContactsTests
 
 - (void)setUp
 {
