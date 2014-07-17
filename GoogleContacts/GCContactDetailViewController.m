@@ -7,9 +7,12 @@
 //
 
 #import "GCContactDetailViewController.h"
+#import "GCUser.h"
 
 @interface GCContactDetailViewController ()
-
+{
+    GCUser *_contact;
+}
 @end
 
 @implementation GCContactDetailViewController
@@ -23,17 +26,27 @@
     return self;
 }
 
+- (id)initWithContact:(GCUser *)contact
+{
+    self = [super initWithNibName:@"GCContactDetailViewController" bundle:nil];
+    if (self) {
+        // Custom initialization
+        _contact = contact;
+    }
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    self.title = self.contact[CONTACT_KEY_NAME];
-    
-    self.name.text = self.contact[CONTACT_KEY_NAME];
-    self.email.text = self.contact[CONTACT_KEY_EMAIL];
-    self.phoneno.text = self.contact[CONTACT_KEY_PHONE_NUMBER];
-    self.address.text = self.contact[CONTACT_KEY_ADDRESS];
+    self.title = _contact.firstName;
+    self.name.text = [NSString stringWithFormat:@"%@ %@",_contact.firstName,_contact.lastName];
+    self.email.text = _contact.email;
+    self.phoneno.text = _contact.phoneno;
+    self.address.text = [NSString stringWithFormat:@"%@ \n%@ \n%@ \n%@",_contact.street,_contact.city,_contact.state,_contact.zip];
+    self.photoImageView.image = [UIImage imageNamed:@"contact_placeholder"];
     
     [self loadContactPhoto];
     
@@ -42,15 +55,17 @@
 
 - (void)loadContactPhoto
 {
-    NSURL *photoURL = [NSURL URLWithString:self.contact[CONTACT_KEY_PHOTO_URL]];
+    NSURL *photoURL = [NSURL URLWithString:_contact.pictureLink];
 
+    __weak GCContactDetailViewController *wSelf = self;
+    
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         
         NSData *photoData = [NSData dataWithContentsOfURL:photoURL];
 
         if (photoData.length > 0) {
             dispatch_async(dispatch_get_main_queue(), ^{
-                self.photoImageView.image = [UIImage imageWithData:photoData];
+                wSelf.photoImageView.image = [UIImage imageWithData:photoData];
             });
         }
         

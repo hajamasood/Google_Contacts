@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A580AF37196BA4F900D9DA71"
-               BuildableName = "GoogleContacts.app"
-               BlueprintName = "GoogleContacts"
-               ReferencedContainer = "container:GoogleContacts.xcodeproj">
+               BuildableName = "Contacts.app"
+               BlueprintName = "Contacts"
+               ReferencedContainer = "container:Contacts.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A580AF52196BA4F900D9DA71"
-               BuildableName = "GoogleContactsTests.xctest"
-               BlueprintName = "GoogleContactsTests"
-               ReferencedContainer = "container:GoogleContacts.xcodeproj">
+               BuildableName = "ContactsTests.xctest"
+               BlueprintName = "ContactsTests"
+               ReferencedContainer = "container:Contacts.xcodeproj">
             </BuildableReference>
             <SkippedTests>
                <Test
@@ -43,14 +43,24 @@
                </Test>
             </SkippedTests>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "A5009BF3197825D20079788E"
+               BuildableName = "GoogleContactsTests copy.xctest"
+               BlueprintName = "GoogleContactsTests copy"
+               ReferencedContainer = "container:Contacts.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A580AF37196BA4F900D9DA71"
-            BuildableName = "GoogleContacts.app"
-            BlueprintName = "GoogleContacts"
-            ReferencedContainer = "container:GoogleContacts.xcodeproj">
+            BuildableName = "Contacts.app"
+            BlueprintName = "Contacts"
+            ReferencedContainer = "container:Contacts.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -67,9 +77,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A580AF37196BA4F900D9DA71"
-            BuildableName = "GoogleContacts.app"
-            BlueprintName = "GoogleContacts"
-            ReferencedContainer = "container:GoogleContacts.xcodeproj">
+            BuildableName = "Contacts.app"
+            BlueprintName = "Contacts"
+            ReferencedContainer = "container:Contacts.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -85,9 +95,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A580AF37196BA4F900D9DA71"
-            BuildableName = "GoogleContacts.app"
-            BlueprintName = "GoogleContacts"
-            ReferencedContainer = "container:GoogleContacts.xcodeproj">
+            BuildableName = "Contacts.app"
+            BlueprintName = "Contacts"
+            ReferencedContainer = "container:Contacts.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

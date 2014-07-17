@@ -9,10 +9,14 @@
 #import "GCContactsTableViewController.h"
 #import "GCContactsManager.h"
 #import "GCContactDetailViewController.h"
+#import "GCUser.h"
+
+#define RANDOM_20_USERS_API @"http://api.randomuser.me/?results=20"
 
 @interface GCContactsTableViewController ()
 {
-    NSArray *_googleContacts;
+    NSMutableArray *_contacts;
+    UIActivityIndicatorView *_spinner;
     
 }
 @end
@@ -29,8 +33,17 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    _googleContacts = [[GCContactsManager sharedInstance] getGoogleContacts];
+    _contacts = [[NSMutableArray alloc] init];
     self.title = @"Contacts";
+    
+    //add network activity indicator
+    _spinner = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 50.0, 50.0)];
+    [_spinner setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray];
+    [_spinner setCenter:self.view.center];
+    [self.view addSubview:_spinner];
+    [_spinner startAnimating];
+    
+    [self getRandomUsers];
 
 }
 
@@ -51,7 +64,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return _googleContacts.count;
+    return _contacts.count;
 }
 
 
@@ -61,12 +74,27 @@
     
     // Configure the cell...
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"Cell"];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
     }
     
-    NSDictionary *contact =  [_googleContacts objectAtIndex:indexPath.row];
-    cell.textLabel.text = contact[CONTACT_KEY_NAME];
-    cell.detailTextLabel.text = contact[CONTACT_KEY_PHONE_NUMBER];
+    GCUser *user = _contacts[indexPath.row];
+    
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ %@",user.firstName,user.lastName];
+    
+    // set placeholder user image while image is being downloaded
+    cell.imageView.image = [UIImage imageNamed:@"contact_placeholder"];
+    
+    __weak UITableViewCell *wCell = cell;
+    
+    // download the image asynchronously
+    [self downloadDataWithURL:[NSURL URLWithString:user.pictureLink] completionBlock:^(BOOL succeeded, NSData *data) {
+        if (succeeded) {
+            // change the image in the cell
+            UIImage *image = [UIImage imageWithData:data];
+            wCell.imageView.image = image;
+            
+        }
+    }];
     
     return cell;
 }
@@ -118,13 +146,60 @@
 {
     // Navigation logic may go here, for example:
     // Create the next view controller.
-    GCContactDetailViewController *detailViewController = [[GCContactDetailViewController alloc] initWithNibName:@"GCContactDetailViewController" bundle:nil];
-    detailViewController.contact = [_googleContacts objectAtIndex:indexPath.row];
+    GCContactDetailViewController *detailViewController = [[GCContactDetailViewController alloc] initWithContact:_contacts[indexPath.row]];
+    
     // Pass the selected object to the new view controller.
     
     // Push the view controller.
     [self.navigationController pushViewController:detailViewController animated:YES];
 }
 
+#pragma mark - Helper Methods
+
+-(void)getRandomUsers
+{
+    
+    [self downloadDataWithURL:[NSURL URLWithString:RANDOM_20_USERS_API] completionBlock:^(BOOL succeeded, NSData *responseData) {
+        NSError *jsonError;
+        NSDictionary *jsonResults = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingAllowFragments error:&jsonError];
+        [self handleJSON:jsonResults];
+        
+    }];
+    
+}
+
+- (void)handleJSON:(NSDictionary *)json
+{
+    for (NSDictionary *userDict in json[@"results"]) {
+        GCUser *user = [[GCUser alloc] initWithUser:userDict[@"user"]];
+        [_contacts addObject:user];
+    }
+    NSLog(@"total contacts retrieved : %d",_contacts.count);
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [_spinner stopAnimating];
+        [_spinner removeFromSuperview];
+        [self.tableView reloadData];
+    });
+}
+
+- (void)downloadDataWithURL:(NSURL *)url completionBlock:(void (^)(BOOL succeeded, NSData *responseData))completionBlock
+{
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        if ( !connectionError )
+        {
+            completionBlock(YES,data);
+        }
+        else
+        {
+            NSLog(@"Connection Error !! %@",connectionError);
+            completionBlock(NO,nil);
+        }
+
+    }];
+    
+}
 
 @end

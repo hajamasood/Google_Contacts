@@ -9,14 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "GCContactsManager.h"
 
-@interface GCContactDetailViewController : UIViewController
+@class GCUser;
 
-@property (nonatomic, strong) NSDictionary *contact;
+@interface GCContactDetailViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UITextField *name;
 @property (weak, nonatomic) IBOutlet UITextField *email;
 @property (weak, nonatomic) IBOutlet UITextField *phoneno;
 @property (weak, nonatomic) IBOutlet UITextView *address;
 @property (weak, nonatomic) IBOutlet UIImageView *photoImageView;
+
+-(id)initWithContact:(GCUser *)contact;
 
 @end

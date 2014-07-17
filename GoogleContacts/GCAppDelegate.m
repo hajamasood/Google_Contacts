@@ -8,6 +8,7 @@
 
 #import "GCAppDelegate.h"
 #import "GCMainViewController.h"
+#import "GCContactsTableViewController.h"
 
 @implementation GCAppDelegate
 
@@ -17,8 +18,8 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     
-    GCMainViewController *mainViewController = [[GCMainViewController alloc] init];
-    self.nvc = [[UINavigationController alloc] initWithRootViewController:mainViewController];
+    GCContactsTableViewController *contactsViewController = [[GCContactsTableViewController alloc] init];
+    self.nvc = [[UINavigationController alloc] initWithRootViewController:contactsViewController];
     self.window.rootViewController = self.nvc;
     
     [self.window makeKeyAndVisible];
